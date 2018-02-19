@@ -1,0 +1,78 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+bool isPrime(int num){
+    bool flag=true;
+    for(int i = 2; i <= num / 2; i++) {
+       if(num % i == 0) {
+          flag = false;
+          break;
+       }
+    }
+    return flag;
+    
+    
+}
+
+
+void maxprime(int p)
+{
+    for(int i=pow(10,p);i>pow(10,p-1);i--)
+    {
+        if(isPrime(i))
+        { cout<<i;
+            break;
+    }
+    }
+
+}
+
+
+
+
+int main() {
+    int t;
+    cin>>t;
+    
+    while(t--)
+    { int n,w;
+     cin>>w>>n;
+      
+     int j=pow(10,w);
+     
+     for(int i=0;i<(n/w);i++)
+     { for(int i=j-1;i>pow(10,w-1);i--)
+     {
+                  
+     if(isPrime(i))
+     {
+         cout<<i;
+         j=i;
+         break;
+     }
+         
+     }   
+     
+      
+    
+    
+     
+     
+     }  
+      int p;
+      p=n%w;
+     if(p==0)
+     {}
+     else
+         maxprime(p);
+      
+     cout<<endl;
+    }
+        
+    return 0;
+}
