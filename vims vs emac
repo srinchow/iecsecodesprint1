@@ -1,0 +1,26 @@
+ull mod_exp(ull a, ull n,ull p){
+	if(n==0) return 1;
+	ull x = mod_exp(a,n/2,p);
+	if(n%2)
+		return (((x*x)%p)*a)%p;
+	return (x*x)%p;
+}
+
+int main()
+{
+	ull T;
+	cin >> T;
+	for(int t=0;t<T;t++)
+	{
+
+		ull a,n,p;
+		cin >> a >> n >> p;
+		cout << "Case #" << t+1 << ": ";
+		ull ans = a;
+		for(int i=2;i<=n;i++){
+			ans = mod_exp(ans,i,p);
+		}
+		cout << ans%p << endl;
+	}
+	return 0;
+}
