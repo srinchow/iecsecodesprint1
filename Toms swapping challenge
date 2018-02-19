@@ -1,0 +1,2 @@
+#python 3 one liner
+for i in range(int(input())):print(" ".join(input().split()[::-1]))
