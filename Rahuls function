@@ -1,0 +1,35 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+using namespace std;
+ 
+
+bool isPerfectSquare(long long x)
+{
+    long long s = sqrt(x);
+    return (s*s == x);
+}
+
+bool isFibonacci(long long n)
+{
+   
+    return isPerfectSquare(5LL*n*n + 4) ||  
+           isPerfectSquare(5LL*n*n - 4);   
+}
+
+int main() {
+  int N; cin >> N;
+  int cnt = 0;
+  while (N--) {
+    long long x; cin >> x;
+    if (isFibonacci(x)) cnt++;     
+  }
+  
+  cout << cnt << "\n";
+  return 0;
+}
+    
